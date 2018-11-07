@@ -1,0 +1,23 @@
+buildscript {
+
+    apply from: "./dependencies.gradle"
+
+    repositories {
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath deps.clazzpath.gradle
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        google()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

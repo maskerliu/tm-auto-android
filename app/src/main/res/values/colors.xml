@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="turquoise">#1abc9c</color>
+    <color name="light_turquoise">#1abc9c</color>
+    <color name="deep_turquoise">#16a085</color>
+
+    <color name="emerald">#40d47e</color>
+    <color name="light_emerald">#b340d47e</color>
+    <color name="deep_emerald">#27ae60</color>
+
+    <color name="blue">#3498db</color>
+    <color name="light_blue">#b33498db</color>
+    <color name="deep_blue">#2980b9</color>
+
+    <color name="purple">#9b59b6</color>
+    <color name="light_purple">#af9b59b6</color>
+    <color name="deep_purple">#8e44ad</color>
+
+    <color name="asphalt">#34495e</color>
+    <color name="light_asphalt">#af34495e</color>
+    <color name="deep_asphalt">#2c3e50</color>
+
+    <color name="orange">#f1c40f</color>
+    <color name="light_orange">#b3f1c40f</color>
+    <color name="deep_orange">#f39c12</color>
+
+    <color name="carrot">#e67e22</color>
+    <color name="light_carrot">#b3e67e22</color>
+    <color name="deep_carrot">#d35400</color>
+
+    <color name="alizarin">#e74c3c</color>
+    <color name="light_alizarin">#b3e74c3c</color>
+    <color name="deep_alizarin">#c0392b</color>
+
+    <color name="cloud">#ecf0f1</color>
+    <color name="light_cloud">#b3ecf0f1</color>
+    <color name="deep_cloud">#bdc3c7</color>
+
+    <color name="concrete">#95a5a6</color>
+    <color name="light_concrete">#b395a5a6</color>
+    <color name="deep_concrete">#7f8c8d</color>
+
+    <color name="grey">#aeaeae</color>
+    <color name="light_grey">#cccccc</color>
+    <color name="deep_grey">#3f3f3f</color>
+
+    <color name="white">#ffffff</color>
+    <color name="light_white">#87ededed</color>
+    <color name="deep_white">#e6e6e6</color>
+
+    <color name="clear">#00000000</color>
+    <color name="translucent">#44000000</color>
+
+    <drawable name="title_background">@color/white</drawable>
+    <drawable name="common_background">#f0f0f0</drawable>
+
+    <color name="inner_divider">#e8e8e1</color>
+
+    <color name="btn_red_normal">@color/alizarin</color>
+    <color name="btn_red_press">@color/deep_alizarin</color>
+    <color name="btn_red_disable">@color/light_alizarin</color>
+
+    <color name="btn_green_normal">@color/turquoise</color>
+    <color name="btn_green_press">@color/deep_turquoise</color>
+    <color name="btn_green_disable">@color/light_turquoise</color>
+
+    <color name="btn_blue_normal">@color/blue</color>
+    <color name="btn_blue_press">@color/deep_blue</color>
+    <color name="btn_blue_disable">@color/light_blue</color>
+
+    <color name="btn_orange_normal">@color/orange</color>
+    <color name="btn_orange_press">@color/deep_orange</color>
+    <color name="btn_orange_disable">@color/light_orange</color>
+
+    <color name="btn_white_normal">@color/white</color>
+    <color name="btn_white_press">@color/deep_white</color>
+    <color name="btn_white_disable">@color/light_white</color>
+
+    <color name="step_pager_previous_tab_color">@color/light_blue</color>
+    <color name="step_pager_selected_tab_color">@color/deep_blue</color>
+    <color name="step_pager_selected_last_tab_color">@color/turquoise</color>
+    <color name="step_pager_next_tab_color">#10000000</color>
+
+</resources>

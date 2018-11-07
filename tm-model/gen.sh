@@ -1,0 +1,1 @@
+java -jar -Dfile.encoding=UTF-8 wire-compiler.jar --proto_path=src/main/proto/ --java_out=src/main/java/ account.proto

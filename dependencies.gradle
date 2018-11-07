@@ -1,0 +1,141 @@
+ext.deps = [:]
+
+def versions = [:]
+
+versions.gradle = '3.2.1'
+versions.build_info = '4.5.4'
+
+
+versions.android_support = "27.1.1"
+versions.constraint = "1.1.2"
+versions.multi_dex = "1.0.3"
+
+versions.gson = "2.8.2"
+versions.okhttp3 = "3.11.0"
+versions.retrofit = "2.4.0"
+versions.picasso = "2.5.2"
+versions.glide = "4.3.1"
+versions.jsoup = "1.11.2"
+versions.ormlite = "5.0"
+versions.photoview = "1.2.6"
+versions.flexbox = "0.3.1"
+versions.lrucache = "2.0.2"
+versions.wire = "2.2.0"
+versions.hellocharts = "1.5.8"
+versions.easypermissions = "1.3.0"
+versions.junit = "4.12"
+versions.playServices = "11.4.2"
+versions.exoplayer = "2.6.0"
+versions.fastjson = "1.2.47"
+versions.glide = "4.7.1"
+versions.arch_lifecycle = "1.1.0"
+versions.arch_livedata = "1.1.0"
+versions.arch_room = "1.1.1"
+versions.arch_databinding = "3.1.3"
+versions.rxjava = "2.2.2"
+versions.rxandroid = "2.1.0"
+versions.rxbinding = "2.2.0"
+versions.rxlifecycle = "2.2.2"
+versions.stetho = "1.5.0"
+versions.timber = "4.7.1"
+
+def deps = [:]
+
+def clazzpath = [:]
+clazzpath.gradle = "com.android.tools.build:gradle:$versions.gradle"
+clazzpath.build_info_extractor = "org.jfrog.buildinfo:build-info-extractor-gradle:$versions.build_info"
+deps.clazzpath = clazzpath
+
+def support = [:]
+support.constraint = "com.android.support.constraint:constraint-layout:$versions.constraint"
+support.annotations = "com.android.support:support-annotations:$versions.android_support"
+support.app_compat = "com.android.support:appcompat-v7:$versions.android_support"
+support.app_preference = "com.android.support:preference-v7:$versions.android_support"
+support.recyclerview = "com.android.support:recyclerview-v7:$versions.android_support"
+support.cardview = "com.android.support:cardview-v7:$versions.android_support"
+support.design = "com.android.support:design:$versions.android_support"
+support.v4 = "com.android.support:support-v4:$versions.android_support"
+support.core_utils = "com.android.support:support-core-utils:$versions.android_support"
+support.gridlayout = "com.android.support:gridlayout-v7:$versions.android_support"
+support.percent = "com.android.support:percent:$versions.android_support"
+support.multi_dex = "com.android.support:multidex:$versions.multi_dex"
+deps.support = support
+
+
+
+def arch = [:]
+arch.lifecycle_runtime = "android.arch.lifecycle:runtime:$versions.arch_lifecycle"
+arch.lifecycle_extensions = "android.arch.lifecycle:extensions:$versions.arch_lifecycle"
+arch.lifecycle_compiler = "android.arch.lifecycle:compiler:$versions.arch_lifecycle"
+arch.livedata = "android.arch.lifecycle:extensions:$versions.arch_livedata"
+arch.reactivestreams = "android.arch.lifecycle:reactivestreams:1.1.1"
+arch.room = "android.arch.persistence.room:runtime:$versions.arch_room"
+arch.room_compiler = "android.arch.persistence.room:compiler:$versions.arch_room"
+arch.room_rxjava2 = "android.arch.persistence.room:rxjava2:$versions.arch_room"
+arch.paging = "android.arch.paging:runtime:1.0.0-alpha3"
+deps.arch = arch
+
+def retrofit = [:]
+retrofit.core = "com.squareup.retrofit2:retrofit:$versions.retrofit"
+retrofit.converter_gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+retrofit.converter_protobuf = "com.squareup.retrofit2:converter-protobuf:$versions.retrofit"
+retrofit.converter_wire = "com.squareup.retrofit2:converter-wire:$versions.retrofit"
+retrofit.adapter_rxjava = "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit"
+deps.retrofit = retrofit
+
+def ormlite = [:]
+ormlite.android = "com.j256.ormlite:ormlite-android:$versions.ormlite"
+ormlite.core = "com.j256.ormlite:ormlite-core:$versions.ormlite"
+deps.ormlite = ormlite
+
+deps.picasso = "com.squareup.picasso:picasso:$versions.picasso"
+deps.okhttp3 = "com.squareup.okhttp3:okhttp:$versions.okhttp3"
+deps.photoview = "com.github.chrisbanes:PhotoView:$versions.photoview"
+deps.hellocharts = "com.github.lecho:hellocharts-android:$versions.hellocharts"
+deps.flexbox = "com.google.android:flexbox:$versions.flexbox"
+deps.gson = "com.google.code.gson:gson:$versions.gson"
+deps.wire = "com.squareup.wire:wire-runtime:$versions.wire"
+deps.zxingcore = "com.google.zxing:core:$versions.zxingcore"
+deps.lrucache = "com.jakewharton:disklrucache:$versions.lrucache"
+deps.jsoup = "org.jsoup:jsoup:$versions.jsoup"
+deps.kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
+deps.glide = "com.github.bumptech.glide:glide:$versions.glide"
+deps.easypermissions = "pub.devrel:easypermissions:$versions.easypermissions"
+deps.gms = "com.google.android.gms:play-services-vision:$versions.playServices"
+deps.exoplayer = "com.google.android.exoplayer:exoplayer:$versions.exoplayer"
+deps.wechat = "com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+"
+deps.fastjson = "com.alibaba:fastjson:$versions.fastjson"
+deps.commonslang3 = "org.apache.commons:commons-lang3:3.7"
+deps.scalpel = "com.jakewharton.scalpel:scalpel:1.1.2"
+deps.spotsdialog = "com.github.d-max:spots-dialog:0.7@aar"
+deps.glide = "com.github.bumptech.glide:glide:$versions.glide"
+deps.rxjava = "io.reactivex.rxjava2:rxjava:$versions.rxjava"
+deps.rxandroid = "io.reactivex.rxjava2:rxandroid:$versions.rxandroid"
+deps.rxbinding = "com.jakewharton.rxbinding2:rxbinding:$versions.rxbinding"
+deps.rxbinding_support_v4 = "com.jakewharton.rxbinding2:rxbinding-support-v4:$versions.rxbinding"
+deps.rxbinding_appcompat_v7 = "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:$versions.rxbinding"
+deps.rxbinding_design = "com.jakewharton.rxbinding2:rxbinding-design:$versions.rxbinding"
+deps.rxbinding_recyclerview = "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:$versions.rxbinding"
+deps.rxlifecycle = "com.trello.rxlifecycle2:rxlifecycle-android:$versions.rxlifecycle"
+deps.rxlifecycle_components = "com.trello.rxlifecycle2:rxlifecycle-components:$versions.rxlifecycle"
+deps.rxlifecycle_components_pref = "com.trello.rxlifecycle2:rxlifecycle-components-preference:$versions.rxlifecycle"
+deps.stetho = "com.facebook.stetho:stetho:$versions.stetho"
+deps.timber = "com.jakewharton.timber:timber:$versions.timber"
+deps.socketio = "io.socket:socket.io-client:1.0.0"
+
+ext.deps = deps
+
+
+def test_deps = [:]
+test_deps.mockwebserver = "com.squareup.okhttp3:mockwebserver:$versions.okhttp3"
+test_deps.junit = "junit:junit:$versions.junit"
+ext.test_deps = test_deps
+
+def build_version = [:]
+build_version.min_sdk = 21
+build_version.target_sdk = 27
+build_version.compile_sdk = 28
+build_version.app_version_name = "1.0.0"
+build_version.app_version_code = 1
+build_version.application_id = "com.tmzdh.monitor"
+ext.build_version = build_version

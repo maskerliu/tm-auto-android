@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">天马监控</string>
+
+    <string name="login_phone_hint">您的手机号</string>
+    <string name="login_verify_code_hint">输入验证码</string>
+    <string name="login_get_verify_code_hint">获取验证码</string>
+    <string name="login_submit_hint">登陆</string>
+
+    <string name="rationale_camera">This app needs access to your camera so you can take pictures.</string>
+    <string name="rationale_location_contacts">This app needs access to your location and contacts to know where and who you are.</string>
+    <string name="rationale_sms">This app needs access to your sms to read all your great messages.</string>
+
+    <string name="returned_from_app_settings_to_activity">
+        Returned from app settings to MainActivity with the following permissions:
+        \n\nCamera: %s
+        \nLocation &amp; Contacts: %s
+        \nSMS: %s
+    </string>
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+</resources>

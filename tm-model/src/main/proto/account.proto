@@ -1,0 +1,23 @@
+syntax = "proto2";
+
+package com.github.lynxchina.argus.mapi.model;
+option java_package = "com.tmauto.argus.mapi.model";
+option java_outer_classname = "TMAccountProtos";
+
+
+message TMAccount {
+    required TMRespStatus status = 1;
+    optional string token = 2;
+    optional TMProfile profile = 3;
+}
+
+message TMRespStatus {
+    optional int32 code = 1;
+    optional string msg = 2;
+}
+
+message TMProfile {
+    optional int32 id = 1;
+    optional string phone = 2;
+    optional string username = 3;
+}

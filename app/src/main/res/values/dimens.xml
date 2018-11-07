@@ -1,0 +1,46 @@
+<resources>
+
+    <dimen name="font_size_xxlarge">21.0sp</dimen>
+    <dimen name="font_size_xlarge">19.0sp</dimen>
+    <dimen name="font_size_large">17.0sp</dimen>
+    <dimen name="font_size_default">15.0sp</dimen>
+    <dimen name="font_size_middle">14.0sp</dimen>
+    <dimen name="font_size_small">13.0sp</dimen>
+    <dimen name="font_size_xsmall">11.0sp</dimen>
+    <dimen name="font_size_xxsmall">9.0sp</dimen>
+
+    <dimen name="bar_height_def">44dp</dimen>
+    <dimen name="bar_height_large">50dp</dimen>
+
+    <dimen name="corner_radius">5dp</dimen>
+
+    <dimen name="button_height_large">45dp</dimen>
+    <dimen name="button_height_default">40dp</dimen>
+    <dimen name="button_height_small">35dp</dimen>
+    <dimen name="button_padding">2.0dp</dimen>
+    <dimen name="button_radius">5dp</dimen>
+
+    <dimen name="item_margin_xlarge">30dp</dimen>
+    <dimen name="item_margin_large">20dp</dimen>
+    <dimen name="item_margin_default">15dp</dimen>
+    <dimen name="item_margin_middle">10dp</dimen>
+    <dimen name="item_margin_small">5dp</dimen>
+
+    <dimen name="item_icon_size">25dp</dimen>
+
+    <dimen name="divier_0.25">0.25dp</dimen>
+    <dimen name="divier_0.5">0.5dp</dimen>
+
+    <dimen name="radio_button_conner_radius">5dp</dimen>
+    <dimen name="radio_button_stroke_border">1dp</dimen>
+
+    <dimen name="scrollbar_thumb_size">5dp</dimen>
+
+    <dimen name="step_pager_tab_width">32dp</dimen>
+    <dimen name="step_pager_tab_height">3dp</dimen>
+    <dimen name="step_pager_tab_spacing">4dp</dimen>
+
+
+    <dimen name="refresh_header_height_def">60dp</dimen>
+    <dimen name="load_more_footer_height_def">60dp</dimen>
+</resources>
