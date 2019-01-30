@@ -10,8 +10,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
 import android.webkit.WebChromeClient;
+import android.webkit.WebView;
 
-import com.tmzdh.jsbridge.DefaultHandler;
+import com.tmzdh.jsbridge.DefaultJsBridgeHandler;
 import com.tmzdh.jsbridge.HybridWebView;
 import com.tmzdh.monitor.common.BaseActivity;
 import com.tmzdh.monitor.jshandler.AccountJsHandler;
@@ -19,8 +20,10 @@ import com.tmzdh.monitor.jshandler.AlbumJsHandler;
 import com.tmzdh.monitor.jshandler.LocationJsHandler;
 import com.tmzdh.monitor.jshandler.LoginJsHandler;
 import com.tmzdh.monitor.model.AccountToken;
+import com.tmzdh.monitor.widget.swipeloadlayout.OnRefreshListener;
+import com.tmzdh.monitor.widget.swipeloadlayout.SwipeLoadLayout;
 
-public class MainActivity extends BaseActivity implements OnClickListener {
+public class MainActivity extends BaseActivity implements OnClickListener, OnRefreshListener {
 
     private static final String[] LOCATION_AND_STORAGE =
             {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.WRITE_EXTERNAL_STORAGE};
@@ -31,34 +34,46 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 
     public static int RESULT_CODE = 0;
 
+    protected SwipeLoadLayout sllContainer;
     protected FloatingActionButton btnSwitch;
     protected HybridWebView wvContainer;
     protected AlbumJsHandler albumJsHandler;
     protected boolean isAdmin = false;
-    protected String url = BizApplication.TM_DOMAIN;
+    protected String url = BizApplication.TM_DOMAIN + "#/app/monitor";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        sllContainer = findViewById(R.id.sll_container);
+        wvContainer = findViewById(R.id.swipe_target);
+
         btnSwitch = findViewById(R.id.btn_switch);
         btnSwitch.setOnClickListener(this);
 
-        wvContainer = findViewById(R.id.wv_container);
+        sllContainer.setRefreshEnabled(true);
+        sllContainer.setLoadMoreEnabled(false);
+        sllContainer.setOnRefreshListener(this);
 
         HybridWebView.setWebContentsDebuggingEnabled(true);
 
         wvContainer.setJsBridgePath(BizApplication.JsBridget_Path);
         wvContainer.setBackgroundColor(0); // 设置背景色
-        wvContainer.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+        wvContainer.setLayerType(View.LAYER_TYPE_HARDWARE, null);
         wvContainer.loadUrl(url);
 
         wvContainer.setOnClickListener(this);
-        wvContainer.setDefaultHandler(new DefaultHandler());
+        wvContainer.setDefHandler(new DefaultJsBridgeHandler());
 
         wvContainer.setWebChromeClient(new WebChromeClient() {
-
+            @Override
+            public void onProgressChanged(WebView view, int newProgress) {
+                super.onProgressChanged(view, newProgress);
+                if (newProgress == 100) {
+                    sllContainer.setRefreshing(false);
+                }
+            }
         });
 
 
@@ -92,22 +107,17 @@ public class MainActivity extends BaseActivity implements OnClickListener {
         switch (v.getId()) {
             case R.id.btn_switch:
                 isAdmin = !isAdmin;
-                url = isAdmin ? BizApplication.TM_DOMAIN + "/mgr/#clients" :
-                        BizApplication.TM_DOMAIN;
+                url = isAdmin ? BizApplication.TM_DOMAIN + "#/mgr/clients" :
+                        BizApplication.TM_DOMAIN + "#/app/monitor";
                 wvContainer.loadUrl(url);
                 break;
         }
-//        if (btnSwitch.equals(v)) {
-//            wvContainer.callHandler("functionInJs", "data from Java", new CallBackFunc() {
-//                @Override
-//                public void onCallBack(String data) {
-//                    Log.i("chris", "reponse data from js: " + data);
-//                }
-//            });
-//
-//        }
     }
 
+    @Override
+    public void onRefresh() {
+        wvContainer.reload();
+    }
 
     public void gotoLogin() {
         narrowBackgroundAnimation();

@@ -15,7 +15,7 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="@dimen/divier_0.25"
+        android:layout_height="@dimen/divide_0.5"
         android:layout_marginLeft="@dimen/item_margin_default"
         android:layout_marginRight="@dimen/item_margin_default"
         android:layout_marginTop="@dimen/item_margin_default"

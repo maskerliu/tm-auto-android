@@ -1,21 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.tmzdh.monitor.MainActivity">
+    android:layout_height="match_parent">
 
-    <com.tmzdh.jsbridge.HybridWebView
-        android:id="@+id/wv_container"
+    <com.tmzdh.monitor.widget.swipeloadlayout.SwipeLoadLayout
+        android:id="@+id/sll_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:background="@color/deep_grey"
+        app:swipe_style="classic">
+
+        <include
+            android:id="@id/swipe_refresh_header"
+            layout="@layout/refresh_header"/>
+
+
+        <!--<WebView-->
+            <!--android:id="@id/swipe_target"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:scrollbarSize="@dimen/scrollbar_thumb_size"-->
+            <!--android:scrollbarStyle="outsideOverlay"-->
+            <!--android:scrollbars="vertical"/>-->
+
+        <com.tmzdh.jsbridge.HybridWebView
+            android:id="@id/swipe_target"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbarSize="@dimen/scrollbar_thumb_size"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollbars="vertical"/>
+
+        <include
+            android:id="@id/swipe_load_more_footer"
+            layout="@layout/load_more_footer"/>
+
+    </com.tmzdh.monitor.widget.swipeloadlayout.SwipeLoadLayout>
 
 
     <android.support.design.widget.FloatingActionButton
@@ -29,4 +51,9 @@
         android:layout_marginBottom="60dp"
         android:src="@mipmap/ic_account_switch"/>
 
-</RelativeLayout>
+</FrameLayout>
+
+
+
+
+

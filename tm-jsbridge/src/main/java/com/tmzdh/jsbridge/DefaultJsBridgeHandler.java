@@ -1,16 +1,16 @@
 package com.tmzdh.jsbridge;
 
-public class DefaultHandler implements JsBridgeHandler {
+public class DefaultJsBridgeHandler implements JsBridgeHandler {
 
     @Override
     public String name() {
-        return "DefaultHandler";
+        return "DefaultJsBridgeHandler";
     }
 
     @Override
     public void handler(String data, CallBackFunc function) {
         if (function != null) {
-            function.onCallBack("DefaultHandler response data");
+            function.onCallBack("DefaultJsBridgeHandler response data");
         }
     }
 

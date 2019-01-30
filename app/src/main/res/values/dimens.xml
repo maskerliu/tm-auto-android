@@ -28,8 +28,8 @@
 
     <dimen name="item_icon_size">25dp</dimen>
 
-    <dimen name="divier_0.25">0.25dp</dimen>
-    <dimen name="divier_0.5">0.5dp</dimen>
+    <dimen name="divie_0.25">0.25dp</dimen>
+    <dimen name="divide_0.5">0.5dp</dimen>
 
     <dimen name="radio_button_conner_radius">5dp</dimen>
     <dimen name="radio_button_stroke_border">1dp</dimen>

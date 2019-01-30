@@ -21,7 +21,7 @@ public class HybridWebView extends WebView implements TMJsBridge {
 
     Map<String, CallBackFunc> responseCallbacks = new HashMap<>();
     Map<String, JsBridgeHandler> messageHandlers = new HashMap<>();
-    JsBridgeHandler defaultHandler = new DefaultHandler();
+    JsBridgeHandler defHandler = new DefaultJsBridgeHandler();
 
     private List<Message> startupMessage = new ArrayList<>();
 
@@ -64,8 +64,8 @@ public class HybridWebView extends WebView implements TMJsBridge {
      * @param handler default handler,handle messages send by js without assigned handler name,
      *                if js message has handler name, it will be handled by named handlers registered by native
      */
-    public void setDefaultHandler(JsBridgeHandler handler) {
-        this.defaultHandler = handler;
+    public void setDefHandler(JsBridgeHandler handler) {
+        this.defHandler = handler;
     }
 
     private void init() {
@@ -219,7 +219,7 @@ public class HybridWebView extends WebView implements TMJsBridge {
                             if (!TextUtils.isEmpty(m.getHandlerName())) {
                                 handler = messageHandlers.get(m.getHandlerName());
                             } else {
-                                handler = defaultHandler;
+                                handler = defHandler;
                             }
                             if (handler != null) {
                                 handler.handler(m.getData(), responseFunction);
@@ -230,7 +230,6 @@ public class HybridWebView extends WebView implements TMJsBridge {
             });
         }
     }
-
 
     public void loadUrl(String jsUrl, CallBackFunc returnCallback) {
         this.loadUrl(jsUrl);
